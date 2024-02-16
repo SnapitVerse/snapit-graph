@@ -1,4 +1,4 @@
-specVersion: 0.0.4
+specVersion: 1.0.0
 indexerHints:
   prune: auto
 schema:
@@ -10,7 +10,7 @@ dataSources:
     source:
       address: "0x8707deaa13aD0883045EC2905BBC22e6d041dC40"
       abi: SnapitNFT
-      startBlock: 37704440
+      startBlock: 37704459
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7

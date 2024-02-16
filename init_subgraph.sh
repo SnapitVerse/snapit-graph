@@ -2,7 +2,7 @@
 
 graph init \
   --product subgraph-studio \
-  --from-contract "0x5fbdb2315678afecb367f032d93f642f64180aa3" \
+  --from-contract "0x8707deaa13aD0883045EC2905BBC22e6d041dC40" \
   --network mainnet \
   --abi "./SnapitNFT.json" \
   firstsubgraph

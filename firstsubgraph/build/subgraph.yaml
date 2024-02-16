@@ -6,11 +6,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: SnapitNFT
-    network: mainnet
+    network: chapel
     source:
-      address: "0x5fbdb2315678afecb367f032d93f642f64180aa3"
+      address: "0x8707deaa13aD0883045EC2905BBC22e6d041dC40"
       abi: SnapitNFT
-      startBlock: 0
+      startBlock: 37704440
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
