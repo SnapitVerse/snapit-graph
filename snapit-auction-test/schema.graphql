@@ -18,7 +18,7 @@ type AuctionStarted @entity(immutable: true) {
   transactionHash: Bytes!
 }
 
-type Bided @entity(immutable: true) {
+type Bid @entity(immutable: true) {
   id: Bytes!
   tokenId: BigInt! # uint256
   bidder: Bytes! # address

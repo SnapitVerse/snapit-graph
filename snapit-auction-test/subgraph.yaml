@@ -8,9 +8,9 @@ dataSources:
     name: SnapitAuction
     network: chapel
     source:
-      address: "0xA5EA8f325518Af7207e3A48818e5eA2829E821D7"
+      address: "0x345ab5eE5aE6005432Ef4AE421F4f303895D69a6"
       abi: SnapitAuction
-      startBlock: 37993988
+      startBlock: 37994994
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -18,7 +18,7 @@ dataSources:
       entities:
         - AuctionClaimed
         - AuctionStarted
-        - Bided
+        - Bid
       abis:
         - name: SnapitAuction
           file: ./abis/SnapitAuction.json
@@ -27,6 +27,6 @@ dataSources:
           handler: handleAuctionClaimed
         - event: AuctionStarted(uint256,uint256,uint256)
           handler: handleAuctionStarted
-        - event: Bided(uint256,indexed address,uint256)
-          handler: handleBided
+        - event: Bid(uint256,indexed address,uint256)
+          handler: handleBid
       file: ./src/snapit-auction.ts

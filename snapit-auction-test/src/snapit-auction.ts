@@ -1,9 +1,9 @@
 import {
   AuctionClaimed as AuctionClaimedEvent,
   AuctionStarted as AuctionStartedEvent,
-  Bided as BidedEvent
+  Bid as BidEvent
 } from "../generated/SnapitAuction/SnapitAuction"
-import { AuctionClaimed, AuctionStarted, Bided } from "../generated/schema"
+import { AuctionClaimed, AuctionStarted, Bid } from "../generated/schema"
 
 export function handleAuctionClaimed(event: AuctionClaimedEvent): void {
   let entity = new AuctionClaimed(
@@ -35,10 +35,8 @@ export function handleAuctionStarted(event: AuctionStartedEvent): void {
   entity.save()
 }
 
-export function handleBided(event: BidedEvent): void {
-  let entity = new Bided(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
-  )
+export function handleBid(event: BidEvent): void {
+  let entity = new Bid(event.transaction.hash.concatI32(event.logIndex.toI32()))
   entity.tokenId = event.params.tokenId
   entity.bidder = event.params.bidder
   entity.price = event.params.price

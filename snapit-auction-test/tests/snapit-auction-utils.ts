@@ -3,7 +3,7 @@ import { ethereum, BigInt, Address } from "@graphprotocol/graph-ts"
 import {
   AuctionClaimed,
   AuctionStarted,
-  Bided
+  Bid
 } from "../generated/SnapitAuction/SnapitAuction"
 
 export function createAuctionClaimedEvent(
@@ -62,27 +62,27 @@ export function createAuctionStartedEvent(
   return auctionStartedEvent
 }
 
-export function createBidedEvent(
+export function createBidEvent(
   tokenId: BigInt,
   bidder: Address,
   price: BigInt
-): Bided {
-  let bidedEvent = changetype<Bided>(newMockEvent())
+): Bid {
+  let bidEvent = changetype<Bid>(newMockEvent())
 
-  bidedEvent.parameters = new Array()
+  bidEvent.parameters = new Array()
 
-  bidedEvent.parameters.push(
+  bidEvent.parameters.push(
     new ethereum.EventParam(
       "tokenId",
       ethereum.Value.fromUnsignedBigInt(tokenId)
     )
   )
-  bidedEvent.parameters.push(
+  bidEvent.parameters.push(
     new ethereum.EventParam("bidder", ethereum.Value.fromAddress(bidder))
   )
-  bidedEvent.parameters.push(
+  bidEvent.parameters.push(
     new ethereum.EventParam("price", ethereum.Value.fromUnsignedBigInt(price))
   )
 
-  return bidedEvent
+  return bidEvent
 }
