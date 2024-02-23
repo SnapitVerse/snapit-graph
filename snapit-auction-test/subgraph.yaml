@@ -1,0 +1,32 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: SnapitAuction
+    network: chapel
+    source:
+      address: "0xA5EA8f325518Af7207e3A48818e5eA2829E821D7"
+      abi: SnapitAuction
+      startBlock: 37993988
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - AuctionClaimed
+        - AuctionStarted
+        - Bided
+      abis:
+        - name: SnapitAuction
+          file: ./abis/SnapitAuction.json
+      eventHandlers:
+        - event: AuctionClaimed(uint256,indexed address,uint256)
+          handler: handleAuctionClaimed
+        - event: AuctionStarted(uint256,uint256,uint256)
+          handler: handleAuctionStarted
+        - event: Bided(uint256,indexed address,uint256)
+          handler: handleBided
+      file: ./src/snapit-auction.ts
