@@ -2,7 +2,7 @@ specVersion: 1.0.0
 indexerHints:
   prune: auto
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: SnapitAuction
@@ -21,7 +21,7 @@ dataSources:
         - Bid
       abis:
         - name: SnapitAuction
-          file: ./abis/SnapitAuction.json
+          file: SnapitAuction/abis/SnapitAuction.json
       eventHandlers:
         - event: AuctionClaimed(uint256,indexed address,uint256)
           handler: handleAuctionClaimed
@@ -29,4 +29,4 @@ dataSources:
           handler: handleAuctionStarted
         - event: Bid(uint256,indexed address,uint256)
           handler: handleBid
-      file: ./src/snapit-auction.ts
+      file: SnapitAuction/SnapitAuction.wasm

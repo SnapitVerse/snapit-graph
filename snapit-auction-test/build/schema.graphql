@@ -1,0 +1,29 @@
+type AuctionClaimed @entity(immutable: true) {
+  id: Bytes!
+  tokenId: BigInt! # uint256
+  winner: Bytes! # address
+  price: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type AuctionStarted @entity(immutable: true) {
+  id: Bytes!
+  tokenId: BigInt! # uint256
+  startTime: BigInt! # uint256
+  endTime: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Bid @entity(immutable: true) {
+  id: Bytes!
+  tokenId: BigInt! # uint256
+  bidder: Bytes! # address
+  price: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
