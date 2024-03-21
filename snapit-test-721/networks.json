@@ -1,0 +1,8 @@
+{
+  "sepolia": {
+    "SnapitNFT": {
+      "address": "0xCEDe92a1D9254A19B7787C568e1f37Ec4cE317fd",
+      "startBlock": 5484602
+    }
+  }
+}
