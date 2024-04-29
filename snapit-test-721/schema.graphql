@@ -36,3 +36,14 @@ type Transfer @entity(immutable: true) {
   blockTimestamp: BigInt!
   transactionHash: Bytes!
 }
+
+type Token @entity {
+  id: ID!
+  metadataUri: String
+}
+
+type TokenOwnership @entity {
+  id: ID! # Combination of token ID and owner address
+  owner: Bytes! # Owner's address
+  token: Token! # Reference to the Token entity
+}
